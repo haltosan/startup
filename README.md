@@ -13,6 +13,6 @@ Key features:
 -	Notify gift givers when a gift is selected
 -	Gift recipients don’t know what they’re going to get
 
-[login wireframe](images/login.png)
+![login wireframe](images/login.png)
 
-[main page wireframe](images/main.png)
+![main page wireframe](images/main.png)
