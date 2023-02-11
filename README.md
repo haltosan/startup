@@ -16,3 +16,8 @@ Key features:
 ![login wireframe](images/login.png)
 
 ![main page wireframe](images/main.png)
+
+# Simon
+Here's a link to that [repo](https://github.com/haltosan/simon) and my [website](https://simon.notawebdev.click/)
+
+Using windows is kinda tricky. The deploy scripts are bash, so it's big sad. Also, the pem they gave us doesn't like to work on windows because of odd permission errors. I still can't get it to work unless I'm using a custom ssh client. Oh well. I can do sftp from there to deploy everything manually, but it isn't the worst. I need a better dev environ right now. All I'm using is notepad++ and command prompt for git. VSCode may be the only way at this point.
