@@ -17,3 +17,18 @@ html {
   height: 200px;
   background: gray;
 }
+
+.descriptionText {
+	margin-left: 10em;
+    margin-right: 10em;
+	
+}
+
+#logo {
+	width:100px;
+	height:32px;
+}
+
+h1 {
+	color: #4B91F1;
+}
