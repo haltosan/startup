@@ -41,12 +41,21 @@ function listToHTML(list){
 	for(const row in list){
 		html = html + '\
 		<tr>\
-		  <th scope="row">' + (list[row][0] ? "Yes" : "No") + '</th>\
+		  <th onclick=update(this) scope="row">' + (list[row][0] ? "Yes" : "No") + '</th>\
 		  <td>' + list[row][1] + '</td>\
 		</tr>';
 	}
 	html = html + "</tbody>";
 	return html;
+}
+
+function update(cell){
+	if(cell.innerText === "Yes"){
+		cell.innerText = "No";
+	}
+	else{
+		cell.innerText = "Yes";
+	}
 }
 
 function setWishList(data){
