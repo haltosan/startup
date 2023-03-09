@@ -6,6 +6,7 @@
   <link href="https://getbootstrap.com/docs/5.1/assets/css/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <script src="login.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
   <div id="form" class="demo-box">
        <div class="mb-3">
 		<label for="nameInput" class="form-label">Name</label>
-        <input class="form-control" type="text" id="nameInput">
+        <input class="form-control" type="text" id="userName">
         <div class="form-text">Whatever you prefer to go by. Gift recipients will not see this.</div>
       </div>
       <div class="mb-3">
@@ -51,10 +52,10 @@
       </div>
 	  <div class="mb-3">
 		<label for="nameInput" class="form-label">Recipient</label>
-        <input class="form-control" type="text" id="nameInput">
+        <input class="form-control" type="text" id="recipient">
         <div class="form-text">Who are you getting gifts for?</div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="login()">Submit</button>
     </div>
 
 
