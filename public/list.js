@@ -26,14 +26,15 @@ const lists = {
 			   [false, "bench press bar"]]
 }
 
-function getList(){
-	const response = await fetch('/api/list');
-	const list = response.json();
-	console.log(list);
-	return lists[getRecipientName() ?? "Guest"] ?? lists['Guest'];
+async function getList(){
+	const response = await fetch('/api/list/Olaf');
+	const list = await response.json();
+	console.log('list: ' + list['list']);
+	return list['list'] ?? lists['Guest'];
 }
 
 function listToHTML(list){
+	console.log('html: ' + list);
 	let html = '<thead>\
     <tr>\
       <th scope="col">Has?</th>\
@@ -42,6 +43,7 @@ function listToHTML(list){
   </thead>\
   <tbody>';
 	for(const row in list){
+		console.log('row: ' + row);
 		html = html + '\
 		<tr>\
 		  <th onclick=update(this) scope="row">' + (list[row][0] ? "Yes" : "No") + '</th>\
@@ -66,9 +68,9 @@ function setWishList(data){
 	wishlist.innerHTML = data;
 }
 
-function main(){
+async function main(){
 	setRecipientName();
-	setWishList(listToHTML(getList()));
+	setWishList(listToHTML(await getList()));
 }
 
 main();

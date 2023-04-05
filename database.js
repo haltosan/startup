@@ -42,14 +42,8 @@ function addListItem(score) {
   listCollection.insertOne(score);
 }
 
-function getList() { //todo: do this for specific users 
-  const query = {};
-  const options = {
-    sort: { score: -1 },
-    limit: 10,
-  };
-  const cursor = listCollection.find(query, options);
-  return cursor.toArray();
+function getList(recipient) {
+  return listCollection.findOne({ recipient: recipient });
 }
 
 module.exports = {

@@ -83,14 +83,14 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// GetScores
-secureApiRouter.get('/scores', async (req, res) => {
-  const scores = await DB.getList();
-  res.send(scores);
+
+secureApiRouter.get('/list/:recipient', async (req, res) => {
+	const scores = await DB.getList(req.params.recipient);
+	res.send(scores);
 });
 
-// SubmitScore
-secureApiRouter.post('/score', async (req, res) => {
+
+secureApiRouter.post('/putList', async (req, res) => {
   await DB.addListItem(req.body);
   const scores = await DB.getList();
   res.send(scores);
