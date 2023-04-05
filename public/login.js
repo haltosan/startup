@@ -20,7 +20,7 @@ async function loginOrCreate(endpoint) {
 
   if (response?.status === 200) {
     localStorage.setItem('userName', userName);
-	const recipient = document/querySelector("#recipient");
+	const recipient = document.querySelector("#recipient");
 	localStorage.setItem("recipient", recipient.value);
     window.location.href = 'list.html';
   } else {

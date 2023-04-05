@@ -21,12 +21,15 @@ const lists = {
 			   [false, "Barbeque cleaning kit"]],
 	"Guest" : [[false, "Kettle bell"],
 	           [true,  "2 lb dumbell"],
-			   [false, "5 lb dumell"],
+			   [false, "5 lb dumbell"],
 			   [false, "bench press bench"],
 			   [false, "bench press bar"]]
 }
 
 function getList(){
+	const response = await fetch('/api/list');
+	const list = response.json();
+	console.log(list);
 	return lists[getRecipientName() ?? "Guest"] ?? lists['Guest'];
 }
 
