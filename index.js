@@ -91,7 +91,7 @@ secureApiRouter.get('/list/:recipient', async (req, res) => {
 
 
 secureApiRouter.post('/putList', async (req, res) => {
-  await DB.addListItem(req.body);
+  await DB.addList(req.body);
   const scores = await DB.getList();
   res.send(scores);
 });

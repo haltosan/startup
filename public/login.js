@@ -6,6 +6,14 @@ async function createUser() {
   loginOrCreate(`/api/auth/create`);
 }
 
+async function putList(){
+	const response = await fetch("/api/putList", {
+		method: 'post',
+		body: JSON.stringify( { recipient: "Anna", list: [[false, "Beef"],[false, "Cakes"]] } ),
+		headers: { 'Content-type': 'application/json; charset=UTF-8', },
+	});
+}
+
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#userName')?.value;
   const password = document.querySelector('#userPassword')?.value;

@@ -38,8 +38,8 @@ async function createUser(email, password) {
   return user;
 }
 
-function addListItem(score) {
-  listCollection.insertOne(score);
+function addList(list) {
+  listCollection.insertOne(list);
 }
 
 function getList(recipient) {
@@ -50,6 +50,6 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addListItem,
+  addList,
   getList,
 };

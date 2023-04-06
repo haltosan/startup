@@ -1,7 +1,7 @@
 //set the title to be the recipient's name 
-function setRecipientName(){
+function setRecipientName(name){
 	const title = document.querySelector("#recipientName");
-	title.textContent = (getRecipientName() ?? "Guest") + "'s list";
+	title.textContent = (name) + "'s list";
 }
 
 function getRecipientName(){
@@ -27,14 +27,20 @@ const lists = {
 }
 
 async function getList(){
-	const response = await fetch('/api/list/Olaf');
-	const list = await response.json();
-	console.log('list: ' + list['list']);
-	return list['list'] ?? lists['Guest'];
+	const response = await fetch('/api/list/' + getRecipientName());
+	let list;
+	try{
+		list = await response.json();
+		setRecipientName(getRecipientName());
+	}
+	catch(error){
+		list = {'list' : lists['Guest']};
+		setRecipientName('Guest');
+	}
+	return list['list'];
 }
 
 function listToHTML(list){
-	console.log('html: ' + list);
 	let html = '<thead>\
     <tr>\
       <th scope="col">Has?</th>\
@@ -43,7 +49,6 @@ function listToHTML(list){
   </thead>\
   <tbody>';
 	for(const row in list){
-		console.log('row: ' + row);
 		html = html + '\
 		<tr>\
 		  <th onclick=update(this) scope="row">' + (list[row][0] ? "Yes" : "No") + '</th>\
@@ -69,7 +74,6 @@ function setWishList(data){
 }
 
 async function main(){
-	setRecipientName();
 	setWishList(listToHTML(await getList()));
 }
 
