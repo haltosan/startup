@@ -51,7 +51,7 @@ function listToHTML(list){
 	for(const row in list){
 		html = html + '\
 		<tr>\
-		  <th onclick=update(this) scope="row">' + (list[row][0] ? "Yes" : "No") + '</th>\
+		  <th onclick=sucker.update(this) scope="row" id="' + list[row][1] + '">' + (list[row][0] ? "Yes" : "No") + '</th>\
 		  <td>' + list[row][1] + '</td>\
 		</tr>';
 	}
@@ -59,22 +59,62 @@ function listToHTML(list){
 	return html;
 }
 
-function update(cell){
-	if(cell.innerText === "Yes"){
-		cell.innerText = "No";
-	}
-	else{
-		cell.innerText = "Yes";
-	}
-}
-
 function setWishList(data){
 	const wishlist = document.querySelector("#wishlist");
 	wishlist.innerHTML = data;
 }
 
+class Sucker{
+	socket;
+
+	async configureWebSocket() {
+		const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+		this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+		this.socket.onopen = (event) => {
+			this.displayMsg('system', 'game', 'connected');
+		};
+		this.socket.onclose = (event) => {
+			this.displayMsg('system', 'game', 'disconnected');
+		};
+		this.socket.onmessage = async (event) => {
+			const msg = JSON.parse(await event.data.text());
+			this.displayMsg('player', msg.from, msg.value);
+		};
+	}
+
+	displayMsg(cls, from, msg) {
+		const chatText = document.querySelector('#player-messages');
+		chatText.innerHTML = `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+	}
+
+	async broadcastEvent(from, type, value) {
+		console.log(value);
+		const event = {
+			from: from,
+			type: type,
+			value: value,
+		};
+		await this.socket.send(JSON.stringify(event));
+	}
+
+	update(cell){
+		if(cell.innerText === "Yes"){
+			cell.innerText = "No";
+		}
+		else{
+			cell.innerText = "Yes";
+			this.broadcastEvent(localStorage.getItem('userName') + ' is getting', 'got', cell.id);
+		}
+	}
+
+}
+
+let sucker = new Sucker();
+
 async function main(){
 	setWishList(listToHTML(await getList()));
+	await sucker.configureWebSocket();
 }
 
 main();
+
