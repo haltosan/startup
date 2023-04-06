@@ -31,3 +31,19 @@ Javascript working with local storage will not work when hosted locally from fil
 Javascript and HTML are tightly coupled, more so than I thought. I always thought the ui layer was disconnected from the logic layer. Adding features taught me that I was very wrong. Every feature needs an entry point, and every entry point needs to be connected to the logic layer. This back and forth between both layers can be tricky if you don't properly plan it out at the start. I didn't plan it out very well at the start (surprise!) and ran into several issues that I only found in production. While it is easy to find issues in production, it is rather expensive to deploy compared to a dev deployment. It pays off to have a good dev environ.
 
 Websockets are pretty hard to test. I needed to pull out my phone to see how different clients work at the same time. Then when both clients are connected, I had to create events on both sides to see the messages. I think I could have solved this with a private browser tab, but I didn't think of that until after I tested this. Something else that's tricky about this is these web socket events are hard to generate programatically without a full blown node app. I guess this goes back to "hard to test". Also, because the result of the event is a UI change, it becomes even harder to test this easily.
+
+Here's an example curl to the api endpoint:
+
+```
+curl "https://startup.notawebdev.click/api/putList" -X POST
+  -H "User-Agent: ------" 
+  -H "Accept: */*" -H "Accept-Language: en-US,en;q=0.5" -H "Accept-Encoding: gzip, deflate, br" 
+  -H "Referer: https://startup.notawebdev.click/login.html" -H "Content-type: application/json; charset=UTF-8" 
+  -H "Origin: https://startup.notawebdev.click" -H "DNT: 1" -H "Connection: keep-alive" 
+  -H "Cookie: token=--TOKEN_HERE--" 
+  -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: same-origin" -H "TE: trailers"
+  --data-raw "{""recipient"":""Anna"",""list"":^[^[false,""Beef""^],^[false,""Cakes""^]^]}" 
+```
+
+For the service layer, this was an adventure. Adding peer to peer connections was rather hard to test (see notes above). It was also rather hard to figure out the data representation for the messages. Dealing with multiple devices with faulty js makes it really hard to verify communications. Other tricky parts to work on were the public api testing. Integrating an external API was significantly easier than I thought. I used the drand public verifiable random values for password salts. Working with the database UI was terribly frustrating, which is why the public api was such a nice thing to have implemented.
+ 
