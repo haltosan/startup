@@ -1,7 +1,5 @@
 # Web frameworks
 
-📖 **Deeper dive reading**: [MDN Introduction to client-side frameworks](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Introduction)
-
 Web frameworks seek to make the job of writing web applications easier by providing tools for completing common application tasks. This includes things like modularizing code, creating single page applications, simplifying reactivity, and supporting diverse hardware devices.
 
 Some frameworks take things beyond the standard web technologies (HTML, CSS, JavaScript) and create new hybrid file formats that combine things like HTML and JavaScript into a single file. Examples of this include React JSX, Vue SFC, and Svelte files. Abstracting away the core web file formats puts the focus on functional components rather than files.
@@ -132,13 +130,6 @@ p {
 
 # React
 
-📖 **Recommended reading**:
-
-- [MDN React Introduction Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
-- [React Quick Start](https://react.dev/learn#components)
-
-<img src="reactLogo.png" width="75" />
-
 React, and its associated projects, provide a powerful web programming framework. The name React comes from its focus on making reactive web page components that automatically update based on user interactions or changes in the underlying data.
 
 ![Jordan Walke](jordanWalke.jpg)
@@ -182,8 +173,6 @@ The `React.createElement` function will then generate DOM elements and monitor t
 ***
 
 # Components
-
-📖 **Recommended reading**: [React.dev - Your First Component](https://react.dev/learn/your-first-component)
 
 React components allow you to modularize the functionality of your application. This allows the underlying code to directly represent the components that a user interacts with. It also enables code reuse as common application component often show up repeatedly.
 
@@ -301,17 +290,6 @@ root.render(<Clicker />);
 
 A component's properties and state are used by the React framework to determine the reactivity of the interface. Reactivity controls how a component reacts to actions taken by the user or events that happen within the application. Whenever a component's state or properties change, the render function for the component and all of its dependent component render functions are called.
 
-## ☑ Assignment
-
-Create a fork of this [CodePen](https://codepen.io/leesjensen/pen/Yzvaver) and experiment.
-
-Try the following:
-
-1. Add a new property to the Demo component that provides the background color for the component.
-2. Add another state variable that changes the color on a mouse over event.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ### 🧧 Possible solution (spoilers!)
 
 If you get stuck here is a possible solution.
@@ -423,14 +401,6 @@ const Question = ({ color }) => {
 ReactDOM.render(<Survey />, document.getElementById('root'));
 ```
 
-## ☑ Assignment
-
-Create a fork of this [codePen](https://codepen.io/leesjensen/pen/NWzYzXE) and experiment. Try changing the input from using the color and radio button, to using an edit box that reactively displays the text as you type.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
 ### 🧧 Possible solution (spoilers!)
 
 If you get stuck here is a possible solution.
@@ -473,8 +443,6 @@ const Question = ({ text }) => {
 ***
 
 # React hooks
-
-📖 **Recommended reading**: [Reactjs.org - Hooks Overview](https://reactjs.org/docs/hooks-overview.html)
 
 React hooks allow React function style components to be able to do everything that a class style component can do and more. Additionally, as new features are added to React they are including them as hooks. This makes function style components the preferred way of doing things in React. You have already see one use of hooks to declare and update state in a function component with the `useState` hook.
 
@@ -584,8 +552,6 @@ You don't have to fully understand what each of these pieces in the chain are ac
 ***
 
 # React CLI
-
-🔑 **Required reading**: [Create React App Getting Started](https://create-react-app.dev/docs/getting-started)
 
 Now that we have covered the basics of React, we want to extend our usage to include a full web framework toolchain that allows us to use JSX, minification, polyfills, and bundling for our Simon and startup applications. One common way for configuring your project to take advantage of these technologies is to use a Command Line Interface (CLI) to initially set up a React based project.
 
@@ -833,12 +799,6 @@ The deployment scripts for Simon React creates a distribution package by calling
 
 The `create-react-app` CLI is not the only tool that you can use to generate a templated React project. For example, there is also `nano-react-app`, that uses [Vite](https://vitejs.dev/) instead of [webpack](https://webpack.js.org/), and results in a very minimal collection of template files. If you are comfortable with what `create-react-app` is doing, then you might experiment with some of the other CLI alternatives. Otherwise, just stick with `create-react-app` for now.
 
-## ☑ Assignment
-
-Experiment with `create-react-app` by creating a test application named `test-react-cli`. Run the application using `npm start`. Then alter the code by changing the content, deleting functionality, and adding a simple component. Finally, build a production deployment version of the application with `npm run build`. When you are done submit a comment about something you found interesting, to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
 ***
 
 ***
@@ -847,13 +807,9 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 
 # Router
 
-🔑 **Required reading**: [React Router DOM Tutorial](https://blog.webdevsimplified.com/2022-07/react-router/)
-
 A web framework router provides essential functionality for single page applications. With a multiple web page application the headers, footers, navigation, and common components must be either duplicated in each HTML page, or injected before the server sends the page to the browser. With a single page application the browser only loads one HTML page and then JavaScript is used to manipulate the DOM and give it the appearance of multiple pages. The router defines the routes a user can take through the application, and automatically manipulates the DOM to display the appropriate framework components.
 
 React does not have a standard router package, and there are many that you can choose from. We will use [react-router-dom](https://www.npmjs.com/package/react-router-dom) Version 6. The simplified routing functionality of React-router-dom derives from the project [react-router](https://www.npmjs.com/package/react-router) for its core functionality. Do not confuse the two, or versions of react-router-dom before version 6, when reading tutorials and documentation.
-
-<img src="reactRouter.jpg">
 
 A basic implementation of the router consists of a `BrowserRouter` component that encapsulates the entire application and controls the routing action. The `Link` component captures user navigation events and modifies what is rendered by the `Routes` component by matching up the `to` and `path` attributes.
 
@@ -884,12 +840,4 @@ root.render(
   </BrowserRouter>
 );
 ```
-
-## ☑ Assignment
-
-Create a fork of this [codePen](https://codepen.io/leesjensen/pen/poKLKaX) and experiment.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
 
