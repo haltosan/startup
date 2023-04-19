@@ -1,12 +1,5 @@
 # JavaScript introduction
 
-<img src="esLogo.png" width=70/>
-
-📖 **Deeper dive reading**:
-
-- [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [ECMA specification](https://tc39.es/ecma262/) - This official specification is only for reference
-
 Officially known as ECMAScript, JavaScript is a weakly typed language based upon concepts found in C, Java, and Scheme. It is by far the most used programming language in the world. It runs on every web browser, is commonly used as a web server language, and for creating serverless functions. In this instruction we will cover the basic parts of the language necessary to create a reasonable website. There are many features of the language that will not be discussed and you should take time to dig into the corners of the language as time allows. The more effectively you understand JavaScript, the better web programmer you will be.
 
 Typically JavaScript is executed using an interpreter at runtime instead of compiling it into a machine specific binary at build time. This has the advantage of making JavaScript very portable, but also allows for many errors, such as using an undefined variable. These types of errors commonly only get discovered when the program crashes during execution.
@@ -69,21 +62,6 @@ Block comment
 
 While not technically required in most cases, it is considered good form to end JavaScript statements with a semicolon (`;`). Code blocks, and their resulting scope, are defined with curly braces (`{ }`).
 
-## Playgrounds
-
-Before we go any further we need a way for you to write and run JavaScript yourself. There are two easy ways to do this.
-
-1. Use an online sandbox like [CodePen](https://codepen.io). With CodePen you can write whatever JavaScript you would like and immediately see the results. Make sure you display the CodePen's Console window if your JavaScript is using the console.log function.
-
-   ![Browser Debugger](codePenJavaScriptDebugger.png)
-
-1. Use your browser's debugger. For example, if you open Chrome and press `F12` the debugger will display. Select the `Console` menu option. This will display a JavaScript interpreter where you can write and execute your code.
-
-   ![Browser Debugger](browserDebugger.png)
-
-## Examples
-
-You can see an example of all the JavaScript we talk about in this instruction with this [HTML page](https://htmlpreview.github.io/?https://github.com/webprogramming260/.github/blob/main/profile/javascript/introduction/introduction.html).
 
 ***
 
@@ -92,8 +70,6 @@ You can see an example of all the JavaScript we talk about in this instruction w
 ***
 
 # JavaScript console
-
-📖 **Deeper dive reading**: [MDN JavaScript Console](https://developer.mozilla.org/en-US/docs/Web/API/console)
 
 The JavaScript console object provides interaction with the JavaScript runtime's debugger console. This usage of console should not be confused with your operating system's console (AKA terminal or command line). The console object provides functionality for outputting the value of text and objects, running timers, and counting iterations. These are useful debugging tools when you can actually execute your code in an interactive debugger (such as VS Code).
 
@@ -193,8 +169,6 @@ Notice that we call the `sayHello` and `sayGoodbye` JavaScript functions from th
 ***
 
 # JavaScript type and construct
-
-📖 **Deeper dive reading**: [MDN Data types and structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 
 ## Declaring variables
 
@@ -406,12 +380,6 @@ while (true) {
 // OUTPUT: 0 1
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses conditional and loop statements.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -419,8 +387,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript string
-
-📖 **Deeper dive reading**: [MDN String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 Strings are a primitive type in JavaScript. A string variable is specified by surround a sequence of characters with single quotes (`'`), double quotes (`"`), or backticks (\`). The meaning of single or double quotes are equivalent, but the backtick defines a string literal that may contain JavaScript that is evaluated in place and concatenated into the string. A string literal replacement specifier is declared with a dollar sign followed by a curly brace pair. Anything inside the curly braces is evaluated as JavaScript. You can also use backticks to create multiline strings without having to explicitly escape the newline characters using `\n`.
 
@@ -480,7 +446,6 @@ console.log(s.toLowerCase());
 
 # Functions
 
-📖 **Deeper dive reading**: [MDN Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 
 In JavaScript functions are first class objects. That means that they can be assigned a name, passed as a parameter, returned as a result, and referenced from an object or array just like any other variable.
 
@@ -625,12 +590,6 @@ labeler('fish');
 // OUTPUT: string=fish
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses all of the concepts related to functions. This includes writing standard, inner, and anonymous functions, as well as passing parameters and returning values.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -717,12 +676,6 @@ console.log(a, b);
 
 Closures provide a valuable property when we do things like execute JavaScript within the scope of an HTML page, because it can remember the values of variables when the function was created instead of what they are when they are executed.
 
-## ☑ Assignment
-
-Create a CodePen that uses the arrow function.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 
 ***
 
@@ -731,8 +684,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript array
-
-📖 **Deeper dive reading**: [MDN Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 JavaScript array objects represent a sequence of other objects and primitives. You can reference the members of the array using a zero based index. You can create an array with the Array constructor or using the array literal notation shown below.
 
@@ -779,12 +730,6 @@ console.log(a.length);
 // OUTPUT: 4
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses arrays.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 *** 
 
 ***
@@ -792,8 +737,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript object and classes
-
-📖 **Deeper dive reading**: [MDN Classes in JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
 
 A JavaScript object represents a collection of name value pairs referred to as properties. The property name must be of type String or Symbol, but the value can be of any type. Objects also have common object-oriented functionality such as constructors, a this pointer, static properties and functions, and inheritance.
 
@@ -954,14 +897,6 @@ console.log(e.print());
 // OUTPUT: My name is Eich. I am a programmer
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses objects and classes.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
 ***
 
 ***
@@ -969,11 +904,6 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 ***
 
 ## JSON
-
-📖 **Deeper dive reading**:
-
-- (MDN JSON)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON]
-- (Douglas Crockford: The JSON Saga)[https://www.youtube.com/watch?v=-C-JoyNuQJs]
 
 JavaScript Object Notation (JSON) was conceived by Douglas Crockford in 2001 while working at Yahoo! JSON, pronounced like the name Jason, received official standardization in 2013 and 2017 (ECMA-404, [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259)).
 
@@ -1036,9 +966,7 @@ Note that in this example, JSON cannot represent the JavaScript `undefined` obje
 
 ***
 
-# JavaScript regular expressions
-
-📖 **Deeper dive reading**: [MDN Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+# JavaScript regular expressions (regex) 
 
 Regular expression support is built right into JavaScript. If you are not familiar with regular expressions, you can think of them as textual pattern matchers. You use a regular expression to find text in a string so that you can replace it, or simply to know that it exists.
 
@@ -1065,12 +993,6 @@ petRegex.test(text);
 // RETURNS: true
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses regular expressions.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -1078,11 +1000,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript rest and spread
-
-📖 **Deeper dive reading**:
-
-- [MDN Rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
-- [MDN Spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
 ## Rest
 
@@ -1135,12 +1052,6 @@ console.log(p);
 // OUTPUT: {first: 'Ryan', last: 'Dahl'}
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses both rest and spread.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -1148,8 +1059,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript destructuring
-
-📖 **Deeper dive reading**: [MDN Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 Destructuring, not to be confused with destructing, is the process of pulling individual items out of an existing one, or removing structure. You can do this with either arrays or objects. This is helpful when you only care about a few items in the original structure.
 
@@ -1219,14 +1128,6 @@ console.log(a);
 // OUTPUT: 1
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses both array and object destructuring.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
 ***
 
 ***
@@ -1234,8 +1135,6 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 ***
 
 # JavaScript exceptions
-
-📖 **Deeper dive reading**: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 
 JavaStript supports exception handling using the `try catch` and `throw` syntax. An exception can be triggered whenever your code generates an exception using the `throw` keyword, or whenever an exception is generated by the JavaScript runtime. For example, when an undefined variable is used.
 
@@ -1294,12 +1193,6 @@ function getScores() {
 }
 ```
 
-## ☑ Assignment
-
-Create a CodePen that uses exception handling.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -1307,12 +1200,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # Scope
-
-📖 **Deeper dive reading**:
-
-- [MDN Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
-- [MDN this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-- [MDN Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 Understanding JavaScript scope is essential for making your programs run as you expect. Scope is defined as the variables that are visible in the current context of execution. JavaScript has four different types of scope:
 
@@ -1507,11 +1394,6 @@ Because of the complex history of modules they can be a confusing topic, but it 
 
 # Document Object Model
 
-📖 **Deeper dive reading**:
-
-- [MDN Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [W3C DOM specification](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) - This official specification is only for reference
-
 The Document Object Model (DOM) is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
 
 The browser provides access to the DOM through a global variable name `document` that points to the root element of the DOM. If you open the browser's debugger console window and type the variable name `document` you will see the DOM for the document the browser is currently rendering.
@@ -1534,8 +1416,6 @@ p {
 ```
 
 For everything in an HTML document there is a node in the DOM. This includes elements, attributes, text, comments, and whitespace. All of these nodes form a big tree, with the document node at the top.
-
-<img src="dom.jpg"/>
 
 ## Accessing the DOM
 
@@ -1632,14 +1512,6 @@ You can also add event listeners directly in the HTML. For example, here is a `o
 <button onclick='alert("clicked")'>click me</button>
 ```
 
-## ☑ Assignment
-
-This [CodePen](https://codepen.io/leesjensen/pen/RwJJZBb) dynamically manipulates the DOM using JavaScript. Create a fork of the pen and take some time to experiment with it. Then make your own codePen that manipulates the DOM.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-Don't forget to update your GitHub startup repository notes.md with all of the things you learned and want to remember.
-
 ***
 
 ***
@@ -1647,11 +1519,6 @@ Don't forget to update your GitHub startup repository notes.md with all of the t
 ***
 
 # Promises
-
-📖 **Deeper dive reading**:
-
-- [MDN Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 JavaScript executes as a single threaded application. That means there is only ever one piece of code executing at the same time. However, the fact that it does not execute concurrently does not mean that it does not execute in parallel. You can asynchronously execute code with the use of a JavaScript `Promise`. Because the execution is asynchronous the promise object can be in one of three states at any given point in time.
 
@@ -1758,12 +1625,6 @@ coinToss
 
 Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The `Observer` pattern, popularized by web programming frameworks such as `Angular`, use a model called `Observer`. The major difference between Observers and Promises is that Promises immediately begin to execute when the Promise is created, but Observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
 
-## ☑ Assignment
-
-This [CodePen](https://codepen.io/leesjensen/pen/RwJJKwj) uses promises to order pizzas. Create a fork of the pen and take some time to experiment with it. Then create your own example of using promises.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
 ***
 
 ***
@@ -1771,8 +1632,6 @@ When you are done submit your CodePen URL to the Canvas assignment.
 ***
 
 # JavaScript Async/await
-
-📖 **Deeper dive reading**: [MDN async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
 JavaScript Promise objects are great for asynchronous execution, but as developers began build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the `async/await` syntax. The `await` keyword wraps the execution of a promise and removed the need to chain functions. The `await` expression will block until the promise state moves to `fulfilled`, or throws an exception if the state moves to `rejected`. For example, if we have a function that returns a coin toss promise.
 
@@ -1893,18 +1752,3 @@ console.log('done');
 // OUTPUT: {email: 'bud@mail.com', authenticated: true}
 // OUTPUT: done
 ```
-
-## ☑ Assignment
-
-This [CodePen](https://codepen.io/leesjensen/pen/KKeevVg) uses async/await to order pizzas. Create a fork of the pen and take some time to experiment with it. Then copy the codePen you created for promises and transform it to use async/await.
-
-When you are done submit your CodePen URL to the Canvas assignment.
-
-***
-
-***
-
-***
-
-
-
